@@ -48,3 +48,36 @@ section.clients {
 section.pure-text-centered {
   padding-bottom: 40px;
 }
+
+@media only screen and (max-device-width: 1024px) {
+  /* .top-bar {
+    background: #1B4B24;
+  } */
+
+  .top-bar .logo {
+    position: unset;
+    max-height: 80px;
+    opacity: 0;
+  }
+
+  .simple-bar .menu li {
+    margin-right: 0px;
+  }
+
+  .top-bar .logo.logo-mobile {
+    position: absolute;
+    top: -32px;
+    left: 0;
+    max-width: none;
+    max-height: 80px;
+    opacity: 0;
+  }
+
+  .row.client-row div[class*=col] {
+    margin: 24px 24px;
+  }
+
+  /* .menu li a {
+    color: #ffffff;
+  } */
+}
