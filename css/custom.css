@@ -2,6 +2,49 @@
   background: #f4f4f4;
 }
 
+.top-bar.nav-sticky {
+  background: #f4f4f4;
+}
+
+.simple-bar .logo {
+  position: absolute;
+  top: 0px;
+  max-width: 40%;
+  max-height: none;
+  transition: max-width 0.5 linear;  
+}
+
+.simple-bar.nav-sticky .logo {
+  max-width: 25%;
+  max-height: none;
+  transition: max-width 0.5 linear;
+}
+
+.simple-bar .nav-menu {
+  padding-top: 32px;
+}
+
+.simple-bar .menu li a {
+  padding-bottom: 32px;
+}
+
 .menu li a {
   color: #373435;
+}
+
+.client-row img {
+  max-width: none;
+  max-height: 32px;
+}
+
+.row.client-row div[class*=col] {
+  margin: 10px 24px;
+}
+
+section.clients {
+  padding-top: 0px;
+}
+
+section.pure-text-centered {
+  padding-bottom: 40px;
 }
