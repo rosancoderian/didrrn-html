@@ -16,7 +16,8 @@
         <link href="css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/theme-cobalt.css" rel="stylesheet" type="text/css" media="all"/>
+				<link href="css/theme-cobalt.css" rel="stylesheet" type="text/css" media="all"/>
+				<link href="css/leaflet.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/custom.css" rel="stylesheet" type="text/css" media="all"/>
         <!--[if gte IE 9]>
         	<link rel="stylesheet" type="text/css" href="css/ie9.css" />
@@ -24,9 +25,9 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic" rel="stylesheet" type="text/css">
-        <link href="css/font-helvetica.css" rel="stylesheet" type="text/css">
-    </head>
-
+				<link href="css/font-helvetica.css" rel="stylesheet" type="text/css">
+			</head>
+			
     <body>
     	<div class="loader">
     		<div class="spinner">
@@ -193,6 +194,8 @@
 				</div>
 			
 			</section>
+
+			<div id="map" style="width:100%;height:350px"></div>			
 			
 			<section class="side-image text-heavy clearfix">
 				<div class="image-container col-md-5 col-sm-3 pull-left">
@@ -290,8 +293,51 @@
         <script src="js/isotope.min.js"></script>
         <script src="js/twitterFetcher_v10_min.js"></script>
         <script src="js/lightbox.min.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
-        <script src="js/scripts.js"></script>
+				<script src="js/jquery.countdown.min.js"></script>
+				<script src="js/leaflet.js"></script>
+				<script src="js/scripts.js"></script>
+				
+				<script>
+					var geoJsonData = 'js/custom.geo.json';
+
+					$.getJSON(geoJsonData, function(data){
+							var map = L.map('map').setView([40, 0], 1);
+							var geoJson = L.geoJson(data, {
+									clickable: true,
+									style: function () {
+										return {
+											fillColor: '#1B4B24',
+											weight: 1,
+											opacity: 1,
+											color: '#fcb216',
+											dashArray: '3',
+											fillOpacity: 0.5
+										}
+									},
+									onEachFeature: function (feature, layer) {
+										layer.on({
+											mouseover: function (e) {
+												var layer = e.target;
+
+												layer.setStyle({
+														weight: 2,
+														color: '#fff',
+														dashArray: '',
+														fillOpacity: 0.7
+												});
+
+												if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+														layer.bringToFront();
+												}
+											},
+											mouseout: function (e) {
+												geoJson.resetStyle(e.target);
+											}
+										});
+									}
+							}).addTo(map);
+					})
+					</script>
     </body>
 </html>
 				
