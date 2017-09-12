@@ -193,9 +193,7 @@
 					<img alt="Product Image" src="img/home2.png">
 				</div>
 			
-			</section>
-
-			<div id="map" style="width:100%;height:350px"></div>			
+			</section>			
 			
 			<section class="side-image text-heavy clearfix">
 				<div class="image-container col-md-5 col-sm-3 pull-left">
@@ -226,6 +224,10 @@
 				</div>
 			</section>
 
+			<section class="side-image text-heavy clearfix">
+				<div id="map" style="width:100%;height:500px"></div>
+			</section>
+			
 			<a id="testimonials" class="in-page-link"></a>
 			<section class="bg-primary">
 				<div class="container">
@@ -301,7 +303,7 @@
 					var geoJsonData = 'js/custom.geo.json';
 
 					$.getJSON(geoJsonData, function(data){
-							var map = L.map('map').setView([40, 0], 1);
+							var map = L.map('map').setView([40, 0], 1.5);
 							var geoJson = L.geoJson(data, {
 									clickable: true,
 									style: function () {
