@@ -55,20 +55,6 @@
 							<ul class="menu">
 								<li><a href="./blog.html">Blog</a></li>
 								<li><a href="./resource.html">Resource</a></li>
-								<!-- <li class="social-icons text-right">
-										<a href="#">
-											<i class="language"><img alt="English" src="img/english.png"></i>
-										</a>
-								</li>	-->
-							</ul>
-		
-							<!-- <ul class="social-icons text-right">
-								<li>
-									<a href="#">
-										<i class="language"><img alt="English" src="img/english.png"></i>
-									</a>
-								</li>
-							</ul> -->
 						</div>
 					</div>
 					
@@ -334,6 +320,9 @@
 											},
 											mouseout: function (e) {
 												geoJson.resetStyle(e.target);
+											},
+											click: function (e) {
+												console.log(e.target)
 											}
 										});
 									}

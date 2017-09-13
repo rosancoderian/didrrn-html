@@ -49,6 +49,23 @@ section.pure-text-centered {
   padding-bottom: 40px;
 }
 
+.column-projects {
+  margin-bottom: 0;
+}
+
+.pagination li:first-child a, .pagination li:last-child a, .pagination li a {
+  border-radius: 0 !important;
+  color: #1B4B24;
+  border-color: #1B4B24;
+}
+
+.pagination li:first-child a:hover, .pagination li:last-child a:hover, .pagination li a:hover {
+  border-radius: 0 !important;
+  color: #ffffff;
+  border-color: #1B4B24;
+  background-color: #1B4B24;
+}
+
 @media only screen and (max-device-width: 1024px) {
   /* .top-bar {
     background: #1B4B24;
@@ -76,8 +93,4 @@ section.pure-text-centered {
   .row.client-row div[class*=col] {
     margin: 24px 24px;
   }
-
-  /* .menu li a {
-    color: #ffffff;
-  } */
 }
