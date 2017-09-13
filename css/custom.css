@@ -71,12 +71,20 @@ section.pure-text-centered {
   display: none; 
 }
 
-.social-icons .icon {
-  opacity: 0.7;
+.social-icons .icon.social_twitter:hover {
+  color: #00aced;
 }
 
-.social-icons .icon:hover {
-  opacity: 1;
+.social-icons .icon.social_facebook:hover {
+  color: #3b5998;
+}
+
+.social-icons .icon.social_instagram:hover {
+  color: #fb3958;
+}
+
+.social-icons .icon.social_youtube:hover {
+  color: #bb0000;
 }
 
 @media only screen and (max-device-width: 1024px) {
