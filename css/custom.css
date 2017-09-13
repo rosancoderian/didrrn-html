@@ -79,6 +79,10 @@ section.pure-text-centered {
   opacity: 1;
 }
 
+.article-single {
+  background-color: #ffffff !important;
+}
+
 @media only screen and (max-device-width: 1024px) {
   .top-bar .logo {
     position: unset;
