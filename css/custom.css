@@ -67,6 +67,10 @@ section.pure-text-centered {
   background-color: #1B4B24;
 }
 
+.logo-mobile {
+  opacity: 0; 
+}
+
 @media only screen and (max-device-width: 1024px) {
   .top-bar .logo {
     position: unset;
