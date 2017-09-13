@@ -59,7 +59,8 @@ section.pure-text-centered {
   border-color: #1B4B24;
 }
 
-.pagination li:first-child a:hover, .pagination li:last-child a:hover, .pagination li a:hover {
+.pagination li:first-child a:hover, .pagination li:last-child a:hover, .pagination li a:hover,
+.pagination li:first-child a:focus, .pagination li:last-child a:focus, .pagination li a:focus {
   border-radius: 0 !important;
   color: #ffffff;
   border-color: #1B4B24;
