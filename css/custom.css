@@ -68,10 +68,6 @@ section.pure-text-centered {
 }
 
 @media only screen and (max-device-width: 1024px) {
-  /* .top-bar {
-    background: #1B4B24;
-  } */
-
   .top-bar .logo {
     position: unset;
     max-height: 80px;
@@ -82,16 +78,21 @@ section.pure-text-centered {
     margin-right: 0px;
   }
 
-  .top-bar .logo.logo-mobile {
+  .logo-mobile {
     position: absolute;
-    top: -32px;
-    left: 0;
+    top: 40px;
+    left: 40px;
     max-width: none;
-    max-height: 80px;
-    opacity: 0;
+    max-height: 100px;
+    opacity: 1;
+    z-index: 100000000000;
   }
 
   .row.client-row div[class*=col] {
     margin: 24px 24px;
+  }
+
+  .simple-bar .text-right {
+    text-align: right !important;
   }
 }
