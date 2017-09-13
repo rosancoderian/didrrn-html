@@ -87,6 +87,14 @@ section.pure-text-centered {
   color: #bb0000;
 }
 
+.background-image-holder {
+  transform: none !important;
+}
+
+.page-header h1 {
+  margin-top: 50px;
+}
+
 @media only screen and (max-device-width: 1024px) {
   .top-bar .logo {
     position: unset;
