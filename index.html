@@ -395,7 +395,7 @@
 								map.panTo(e.latlng)
 								var popup = L.popup()
 									.setLatLng(e.latlng)
-									.setContent('<p>' + (members[country].join('</br>')) + '</p>')
+									.setContent('<h4>' + country + '</h4><p>' + (members[country].join('</br>')) + '</p>')
 									.openOn(map);
 							}
 						}
