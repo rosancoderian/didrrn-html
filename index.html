@@ -307,7 +307,10 @@
 					var geoJsonData = 'js/custom.geo.json';
 
 					$.getJSON(geoJsonData, function(data){
-							var map = L.map('map').setView([40, 0], 1.5);
+							var map = L.map('map', { 
+								zoomControl: false,
+								scrollWheelZoom: false 
+							}).setView([40, 0], 1.5);
 							var geoJson = L.geoJson(data, {
 									clickable: true,
 									style: function () {
