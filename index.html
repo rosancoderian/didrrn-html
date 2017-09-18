@@ -334,7 +334,9 @@
 			var countries = Object.keys(members);
 			var map = L.map('map', {
 				zoomControl: false,
-				scrollWheelZoom: false
+				scrollWheelZoom: false,
+				touchZoom: false,
+				doubleClickZoom: false,
 			}).setView([40, 0], 1.5);
 
 			var geoJson = L.geoJson(geo, {
