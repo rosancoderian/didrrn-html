@@ -15,7 +15,7 @@
 }
 
 .simple-bar.nav-sticky .logo {
-  max-width: 25%;
+  max-width: 40%;
   max-height: none;
   transition: max-width 0.5 linear;
 }
@@ -34,7 +34,8 @@
 
 .client-row img {
   max-width: none;
-  max-height: 32px;
+  max-height: 57px;
+  max-width:98px;
 }
 
 .row.client-row div[class*=col] {
