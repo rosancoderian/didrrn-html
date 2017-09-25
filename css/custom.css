@@ -96,6 +96,19 @@ section.pure-text-centered {
   margin-top: 50px;
 }
 
+.article-single {
+  background: #ffffff !important;
+}
+
+.author-details {
+  text-align: left;
+}
+
+.author-details .media .media-object {
+  max-width: 64px;
+  margin-right: 40px;
+}
+
 @media only screen and (max-device-width: 1024px) {
   .top-bar .logo {
     position: unset;
