@@ -60,20 +60,7 @@
 							<li><a href="./index.html">Home</a></li>
 							<li><a href="./blog.html">Blog</a></li>
 							<li><a href="./resource.html">Resource</a></li>
-							<!-- <li class="social-icons text-right">
-										<a href="#">
-											<i class="language"><img alt="English" src="img/english.png"></i>
-										</a>
-								</li>	-->
 						</ul>
-
-						<!-- <ul class="social-icons text-right">
-								<li>
-									<a href="#">
-										<i class="language"><img alt="English" src="img/english.png"></i>
-									</a>
-								</li>
-							</ul> -->
 					</div>
 				</div>
 
@@ -341,6 +328,26 @@
 		var geoJsonData = 'js/custom.geo.json';
 		var membersJsonData = 'js/members.json';
 
+		function disableMapTouch (map) {
+			map.scrollWheelZoom.disable()
+			map.dragging.disable()
+			map.touchZoom.disable()
+			map.doubleClickZoom.disable()
+			map.boxZoom.disable()
+			map.keyboard.disable()
+			if (map.tap) map.tap.disable()
+		}
+
+		function enableMapTouch (map) {
+			map.scrollWheelZoom.enable()
+			map.dragging.enable()
+			map.touchZoom.enable()
+			map.doubleClickZoom.enable()
+			map.boxZoom.enable()
+			map.keyboard.enable()
+			if (map.tap) map.tap.enable()
+		}
+
 		function isMember (country, countries) {
 			return countries.find(function (val) {
 				return val === country
@@ -418,12 +425,16 @@
 						}
 					});
 				}
-			}).addTo(map);
+			}).addTo(map)
+			return map
 		}
 
 		$.getJSON(geoJsonData, function (geo) {
 			$.getJSON(membersJsonData, function (members) {
-				initMap(geo, members)
+				var map = initMap(geo, members)
+				disableMapTouch(map)
+				$('#map').on('click', function () { enableMapTouch(map) })
+				$('#map').on('mouseout', function () { disableMapTouch(map) })
 			})
 		})
 	</script>
