@@ -177,3 +177,31 @@ section.pure-text-centered {
     text-align: right !important;
   }
 }
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hidden-desktop, .hidden-tablet {
+    display: none !important;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .hidden-phone {
+    display: none !important;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .hidden-phone {
+    display: none !important;
+  }
+}
