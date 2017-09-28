@@ -224,7 +224,7 @@
 		</section>
 
 		<section class="side-image text-heavy clearfix">
-			<div id="map" style="width:100%;height:500px"></div>
+			<div id="map" style="width:100%;height:700px"></div>
 		</section>
 
 		<section class="video-inline">
@@ -322,12 +322,13 @@
 	<script src="js/lightbox.min.js"></script>
 	<script src="js/jquery.countdown.min.js"></script>
 	<script src="js/leaflet.js"></script>
+	<script src="js/randomColor.min.js"></script>	
 	<script src="js/scripts.js"></script>
 
 	<script>
-		var geoJsonData = 'js/custom.geo.json';
-		var membersJsonData = 'js/members.json';
-
+		var geoJsonData = 'js/custom.geo.json'
+		var membersJsonData = 'js/members.json'
+		
 		function disableMapTouch (map) {
 			map.scrollWheelZoom.disable()
 			map.dragging.disable()
@@ -354,7 +355,16 @@
 			})
 		}
 
-		function initMap(geo, members) {
+		function generateMembersColor (members) {
+			var countries = Object.keys(members)
+			var colors = {}
+			for (var i = 0; i < countries.length; i++) {
+				colors[countries[i]] = randomColor()
+			}
+			return colors
+		}
+
+		function initMap(geo, members, colors) {
 			var countries = Object.keys(members);
 			var map = L.map('map', {
 				zoomControl: false,
@@ -366,9 +376,10 @@
 			var geoJson = L.geoJson(geo, {
 				clickable: true,
 				style: function (feature) {
-					if (isMember(feature.properties.name, countries)) {
+					var country = feature.properties.name
+					if (isMember(country, countries)) {
 						return {
-							fillColor: '#1B4B24',
+							fillColor: colors[country],
 							weight: 1,
 							opacity: 1,
 							color: '#fcb216',
@@ -396,7 +407,7 @@
 									weight: 2,
 									color: '#fff',
 									dashArray: '',
-									fillOpacity: 0.7
+									fillOpacity: 1
 								});
 							} else {
 								layer.setStyle({
@@ -431,10 +442,10 @@
 
 		$.getJSON(geoJsonData, function (geo) {
 			$.getJSON(membersJsonData, function (members) {
-				var map = initMap(geo, members)
+				var map = initMap(geo, members, generateMembersColor(members))
 				disableMapTouch(map)
-				$('#map').on('click', function () { enableMapTouch(map) })
-				$('#map').on('mouseout', function () { disableMapTouch(map) })
+				// $('#map').on('click', function () { enableMapTouch(map) })
+				// $('#map').on('mouseout', function () { disableMapTouch(map) })
 			})
 		})
 	</script>
