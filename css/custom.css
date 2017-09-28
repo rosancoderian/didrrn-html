@@ -109,6 +109,45 @@ section.pure-text-centered {
   margin-right: 40px;
 }
 
+.blog-list-3 {
+  margin-bottom: 80px;
+}
+
+.blog-snippet-3 {
+  background-color: #fff !important;
+  padding-top: 40px;
+  padding-bottom: 40px 
+}
+
+.row-resource div[class*='col-md-'] {
+  padding-left: 0px;
+  margin-bottom: 60px;
+}
+
+.nav.nav-category>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+  color: #777;
+  border-bottom: 1px solid #777;
+}
+
+.nav.nav-category>li:last-child>a {
+  border-bottom: 0px;
+}
+
+.nav.nav-category>li>a:hover {
+  background-color: unset !important;
+  color: #333;
+}
+
+.nav.nav-category .nav-header {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
 @media only screen and (max-device-width: 1024px) {
   .top-bar .logo {
     position: unset;
