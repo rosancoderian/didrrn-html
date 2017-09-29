@@ -438,7 +438,7 @@
 						},
 						click: function (e) {
 							if (isMember(country, countries)) {
-								map.panTo(e.latlng)
+								// map.panTo(e.latlng)
 								var popup = L.popup()
 									.setLatLng(e.latlng)
 									.setContent('<h4>' + country + '</h4><p>' + (members[country].join('</br>')) + '</p>')
